@@ -1,0 +1,11 @@
+img#octopus {
+	z-index: 0;
+}
+
+img#hat {
+	z-index: 1;
+}
+
+img#glasses {
+	z-index: 1;
+}
