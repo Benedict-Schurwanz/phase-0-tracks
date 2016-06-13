@@ -12,5 +12,32 @@
 	- When doors open
 		- if current floor matches the intended destination floor
 			- exit the elevator
-end
+
+
+
+* Release 1 - Preparing a bagel to eat *
+- Determine preferred toppings: butter, cream cheese, jelly
+	- if jelly is preferred, determine preferred jelly flavor
+- Select bagel type: raisin, plain, "everything"
+- Determine whether user wants bagel toasted
+- slice bagel in half, parallel to the plane of the bagel
+- If user wants bagel toasted: 
+	- put bagel halves into toaster, one half in each slot, 
+	- depress button on toaster
+	- wait for bagel halves to pop up
+		- when bagel halves pop up, remove bagel halves from toaster
+- Apply preferred topings: 
+	- if butter is preferred: 
+		- Using butter knife, scoop up 1/4 tsp of butter, 
+		- spread butter evenly onto part of bagel half that doesn't have butter on it,
+		- repeat until both halves are covered with some butter
+	- if cream cheese is preferred: 
+		- Using butter knife, scoop up 1/4 tsp of cream cheese, 
+		- spread cream cheese evenly onto part of bagel half that doesn't have cream cheese on it,
+		- repeat until both halves are covered with some cream cheese
+	- if jelly is preferred: 
+		- Using butter knife, scoop up 1/4 tsp of preferred jelly flavor, 
+		- spread preferred jelly flavor evenly onto part of bagel half that doesn't have jelly on it,
+		- repeat until both halves are covered with some jelly
+
 
