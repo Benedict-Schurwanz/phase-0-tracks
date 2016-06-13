@@ -1,0 +1,16 @@
+* Using an elevator *
+
+- If elevator doors are open, 
+		-Enter elevator
+	- If doors are closed
+		- Wait for doors to open.
+- When inside elevator
+	- Read the number on each button
+	- When the number written on the button is equal to the number corresponding to the intended destination floor,
+		- Use finger to press the button once and let go
+	- Wait until doors open
+	- When doors open
+		- if current floor matches the intended destination floor
+			- exit the elevator
+end
+
