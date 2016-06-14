@@ -1,0 +1,20 @@
+.column-1 {
+  float: left;
+  width: 49%;
+}
+
+.column-2 {
+  float: right;
+  width: 49%;
+}
+
+.column-1, .column-2 {
+  background-color: lightblue;
+  padding: 15px; 
+  box-sizing: border-box; //<-- this makes padding/border a part of the width calculation
+  font-family: "Comic Sans MS";
+}
+
+footer {
+  clear: both;
+}
