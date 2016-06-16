@@ -15,15 +15,40 @@ while age == 0		# check for invalid input
 end					# works
 
 puts "What year were you born? "
-year = gets.to_i
+year_input = gets.to_i
+year = 2016 - year_input
 
 puts "Our company cafeteria serves garlic bread. Should we order some for you? "
-garlic = gets.chomp
+garlic_input = gets.chomp
+# ask again if invalid input
+until ((garlic_input == "Yes") || (garlic_input == "yes")  || (garlic_input == "y") || (garlic_input == "Y") || (garlic_input == "No") || (garlic_input == "no") || (garlic_input == "N") || (garlic_input == "n"))
+		puts "Please type \"yes\" or \"no\""
+		garlic_input = gets.chomp
+end
+# set garlic to boolean based on user input
+if ((garlic_input == "Yes") || (garlic_input == "yes")  || (garlic_input == "y") || (garlic_input == "Y"))
+		garlic = true;
+elsif ((garlic_input == "No") || (garlic_input == "no") || (garlic_input == "N") || (garlic_input == "n"))
+		garlic = false;
+end
+	
 
 puts "Would you like to enroll in the company's health insurance? "
-insurance = gets.chomp
+insurance_input = gets.chomp
+# ask again if invalid input
+until ((insurance_input == "Yes") || (insurance_input == "yes")  || (insurance_input == "y") || (insurance_input == "Y") || (insurance_input == "No") || (insurance_input == "no") || (insurance_input == "N") || (insurance_input == "n"))
+		puts "Please type \"yes\" or \"no\""
+		insurance_input = gets.chomp
+end
+# set insurance to boolean based on user input
+if ((insurance_input == "Yes") || (insurance_input == "yes")  || (insurance_input == "y") || (insurance_input == "Y"))
+		insurance = true;
+elsif ((insurance_input == "No") || (insurance_input == "no") || (insurance_input == "N") || (insurance_input == "n"))
+		insurance = false;
+end
 
 
+#if age == year && (garlic )
 
 
 =begin	Pseudocode
