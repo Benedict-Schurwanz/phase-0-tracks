@@ -57,15 +57,16 @@ for i in (1..num_employees) do
 	# allergy check
 	puts "Please list any allergies you have, hit \"Enter\" after each one, type \"done\" when done."
 	sunshine = 0
-	begin
+	begin  	# while loop
 		allergy = gets.chomp
 		if allergy == "sunshine"
 			sunshine = 1
 		end
 	end while ((allergy != "done") && (sunshine == 0))
+
 	if sunshine == 1
 		puts "Probably a vampire.\n \n"
-		next
+		next	# skips to next employee
 	end
 
 
@@ -109,6 +110,11 @@ for i in (1..num_employees) do
 
 end
 
+
+# nevermind
+
+puts "\n \nActually, never mind! What do these questions have to do with anything? Let's all be friends."
+puts "Thank you for using the Vampire Detector 5000 (R)(tm)"
 
 
 
