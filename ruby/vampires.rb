@@ -54,6 +54,19 @@ for i in (1..num_employees) do
 			insurance = false;
 	end
 
+	# allergy check
+	puts "Please list any allergies you have, hit \"Enter\" after each one, type \"done\" when done."
+	sunshine = 0
+	begin
+		allergy = gets.chomp
+		if allergy == "sunshine"
+			sunshine = 1
+		end
+	end while ((allergy != "done") && (sunshine == 0))
+	if sunshine == 1
+		puts "Probably a vampire.\n \n"
+		next
+	end
 
 
 	# run vampire test
@@ -78,19 +91,19 @@ for i in (1..num_employees) do
 
 	# print vampire test results
 	if vampire == 1
-		puts "Probably not a vampire.\n"
+		puts "Probably not a vampire.\n \n"
 	#	puts vampire 	# check final variable value
 	elsif vampire == 2
-		puts "Probably a vampire.\n"
+		puts "Probably a vampire.\n \n"
 	#	puts vampire 	# check final variable value
 	elsif vampire == 3
-		puts "Almost certainly a vampire.\n"
+		puts "Almost certainly a vampire.\n \n"
 	#	puts vampire 	# check final variable value
 	elsif vampire == 4
-		puts "Definitely a vampire.\n"
+		puts "Definitely a vampire.\n \n"
 	#	puts vampire 	# check final variable value
 	else
-		puts "Results inconclusive.\n"
+		puts "Results inconclusive.\n \n"
 	#	puts vampire 	# check final variable value
 	end
 
@@ -142,7 +155,10 @@ bad name, age wrong, !garlic, !insurance 	0, 3, 4
 =end
 
 
-
+# allergy check
+# type any allergies one at a time, until done is typed, if any allergy is "sunshine" then exit to "Probably a vampire". need to print message and then advance to the next iteration of the for loop
+# could use an array to collect the strings, would have figure out how to use an array of flexible size and add one cell at a time
+# we don't care about what the string is unless it's "sunshine". we can use a variable called "sunshine" and set that to 1 if they enter sunshine and then break out of the allergy-check loop, and after the loop output "Probably a vampire" and then advance to "next" iteration of the outer "for" loop, if sunshine == 0 then just "end" and continue with the rest of the condition checks
 
 
 
