@@ -4,21 +4,22 @@
 # benedict.schurwanz@gmail.com
 
 
+
+## Get Input
 puts "What is your name? "
 name = gets.chomp
 
 puts "How many years old are you? "
 age = gets.to_i
+# if user types letters instead of numbers, age will equal 0, which is also an invalid age
+# if user types a number with decimals - 2.3 - age will get rounded down to an integer
 while age == 0		# check for invalid input
-	# if user types letters instead of numbers, age will equal 0
-	# if user types a number with decimals - 2.3 - age will get rounded down to an integer
 	puts "Please type a whole number greater than 0. How many years old are you? "
 	age = gets.to_i
-end					# works
+end
 
 puts "What year were you born? "
 year = gets.to_i
-#year = 2016 - year_input
 
 puts "Our company cafeteria serves garlic bread. Should we order some for you? "
 garlic_input = gets.chomp
@@ -27,13 +28,12 @@ until ((garlic_input == "Yes") || (garlic_input == "yes")  || (garlic_input == "
 		puts "Please type \"yes\" or \"no\""
 		garlic_input = gets.chomp
 end
-# set garlic to boolean based on user input
+# convert garlic preference to boolean based on user input
 if ((garlic_input == "Yes") || (garlic_input == "yes")  || (garlic_input == "y") || (garlic_input == "Y"))
 		garlic = true;
 elsif ((garlic_input == "No") || (garlic_input == "no") || (garlic_input == "N") || (garlic_input == "n"))
 		garlic = false;
 end
-	
 
 puts "Would you like to enroll in the company's health insurance? "
 insurance_input = gets.chomp
@@ -42,47 +42,75 @@ until ((insurance_input == "Yes") || (insurance_input == "yes")  || (insurance_i
 		puts "Please type \"yes\" or \"no\""
 		insurance_input = gets.chomp
 end
-# set insurance to boolean based on user input
+# convert insurance preference to boolean based on user input
 if ((insurance_input == "Yes") || (insurance_input == "yes")  || (insurance_input == "y") || (insurance_input == "Y"))
 		insurance = true;
 elsif ((insurance_input == "No") || (insurance_input == "no") || (insurance_input == "N") || (insurance_input == "n"))
 		insurance = false;
 end
 
+
+
 # run vampire test
+vampire = 0		# initialize variable
+puts vampire 	# monitor changes in variable
 if (age == (2016 - year) || age == (2015 - year)) && (garlic || insurance)
 	vampire = 1
-elsif !(age == (2016 - year) || age == (2015 - year)) && (!garlic || !insurance)
+	puts vampire 	# monitor changes in variable 
+end
+if !(age == (2016 - year) || age == (2015 - year)) && (!garlic || !insurance)
 	vampire = 2
-elsif !(age == (2016 - year) || age == (2015 - year)) && !garlic && !insurance
+	puts vampire 	# monitor changes in variable
+end
+if !(age == (2016 - year) || age == (2015 - year)) && !garlic && !insurance
 	vampire = 3
-elsif name == "Drake Cula" || name == "Tu Fang"
+	puts vampire 	# monitor changes in variable
+end
+if name == "Drake Cula" || name == "Tu Fang"
 	vampire = 4
-else
-	vampire = 0
+	puts vampire 	# monitor changes in variable
 end
 
 # print vampire test results
 if vampire == 1
 	puts "Probably not a vampire."
-	puts vampire
+	puts vampire 	# check final variable value
 elsif vampire == 2
 	puts "Probably a vampire."
-	puts vampire
+	puts vampire 	# check final variable value
 elsif vampire == 3
 	puts "Almost certainly a vampire."
-	puts vampire
+	puts vampire 	# check final variable value
 elsif vampire == 4
 	puts "Definitely a vampire."
-	puts vampire
+	puts vampire 	# check final variable value
 else
 	puts "Results inconclusive."
-	puts vampire
+	puts vampire 	# check final variable value
 end
 
 
-=begin		# test all inputs and outputs
+=begin		# plan: test all inputs and outputs
+any name, age right, garlic, insurance 		0, 1
+any name, age right, !garlic, insurance 	0, 1
+any name, age right, garlic, !insurance 	0, 1
+any name, age right, !garlic, !insurance 	0
 
+any name, age wrong, garlic, insurance 		0
+any name, age wrong, !garlic, insurance 	0, 2
+any name, age wrong, garlic, !insurance 	0, 2
+any name, age wrong, !garlic, !insurance 	0, 2, 3
+
+
+bad name, age right, garlic, insurance  	0, 1, 4
+bad name, age right, !garlic, insurance 	0, 1, 4
+bad name, age right, garlic, !insurance 	0, 1, 4
+bad name, age right, !garlic, !insurance 	0, 4
+
+bad name, age wrong, garlic, insurance  	0, 4
+bad name, age wrong, !garlic, insurance 	0, 2, 4
+bad name, age wrong, garlic, !insurance 	0, 2, 3, 4
+bad name, age wrong, !garlic, !insurance 	0, 4
 
 =end
 
@@ -95,7 +123,7 @@ end
 
 Are they a vampire?
 
-if age = (2016 - year) and (garlic = yes OR insurance = yes) then "Probably not a vampire"
+if (age == (2016 - year) or (2015 - year)) and (garlic = yes OR insurance = yes) then "Probably not a vampire"
 if age wrong AND (garlic = no OR insurance = no) then "Probably a vampire"
 if age wrong AND garlic = no AND insurance = no then "Almost certainly a vampire"
 if name = "Drake Cula" or "Tu Fang" then "Definitely a vampire"
