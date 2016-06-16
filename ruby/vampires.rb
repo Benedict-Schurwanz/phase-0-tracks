@@ -53,41 +53,62 @@ end
 
 # run vampire test
 vampire = 0		# initialize variable
-puts vampire 	# monitor changes in variable
+#puts vampire 	# monitor changes in variable
 if (age == (2016 - year) || age == (2015 - year)) && (garlic || insurance)
 	vampire = 1
-	puts vampire 	# monitor changes in variable 
+#	puts vampire 	# monitor changes in variable 
 end
 if !(age == (2016 - year) || age == (2015 - year)) && (!garlic || !insurance)
 	vampire = 2
-	puts vampire 	# monitor changes in variable
+#	puts vampire 	# monitor changes in variable
 end
 if !(age == (2016 - year) || age == (2015 - year)) && !garlic && !insurance
 	vampire = 3
-	puts vampire 	# monitor changes in variable
+#	puts vampire 	# monitor changes in variable
 end
 if name == "Drake Cula" || name == "Tu Fang"
 	vampire = 4
-	puts vampire 	# monitor changes in variable
+#	puts vampire 	# monitor changes in variable
 end
 
 # print vampire test results
 if vampire == 1
 	puts "Probably not a vampire."
-	puts vampire 	# check final variable value
+#	puts vampire 	# check final variable value
 elsif vampire == 2
 	puts "Probably a vampire."
-	puts vampire 	# check final variable value
+#	puts vampire 	# check final variable value
 elsif vampire == 3
 	puts "Almost certainly a vampire."
-	puts vampire 	# check final variable value
+#	puts vampire 	# check final variable value
 elsif vampire == 4
 	puts "Definitely a vampire."
-	puts vampire 	# check final variable value
+#	puts vampire 	# check final variable value
 else
 	puts "Results inconclusive."
-	puts vampire 	# check final variable value
+#	puts vampire 	# check final variable value
 end
+
+
+
+
+
+#################################################################################
+# notes
+#################################################################################
+
+=begin	Pseudocode
+
+Are they a vampire?
+
+if (age == (2016 - year) or (2015 - year)) and (garlic = yes OR insurance = yes) then "Probably not a vampire"
+if age wrong AND (garlic = no OR insurance = no) then "Probably a vampire"
+if age wrong AND garlic = no AND insurance = no then "Almost certainly a vampire"
+if name = "Drake Cula" or "Tu Fang" then "Definitely a vampire"
+else "Results inconclusive"
+
+=end
+
 
 
 =begin		# plan: test all inputs and outputs
@@ -109,27 +130,11 @@ bad name, age right, !garlic, !insurance 	0, 4
 
 bad name, age wrong, garlic, insurance  	0, 4
 bad name, age wrong, !garlic, insurance 	0, 2, 4
-bad name, age wrong, garlic, !insurance 	0, 2, 3, 4
-bad name, age wrong, !garlic, !insurance 	0, 4
+bad name, age wrong, garlic, !insurance 	0, 2, 4
+bad name, age wrong, !garlic, !insurance 	0, 3, 4
 
 =end
 
-
-#################################################################################
-# notes
-#################################################################################
-
-=begin	Pseudocode
-
-Are they a vampire?
-
-if (age == (2016 - year) or (2015 - year)) and (garlic = yes OR insurance = yes) then "Probably not a vampire"
-if age wrong AND (garlic = no OR insurance = no) then "Probably a vampire"
-if age wrong AND garlic = no AND insurance = no then "Almost certainly a vampire"
-if name = "Drake Cula" or "Tu Fang" then "Definitely a vampire"
-else "Results inconclusive"
-
-=end
 
 
 
