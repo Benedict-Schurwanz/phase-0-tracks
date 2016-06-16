@@ -8,10 +8,14 @@ puts "What is your name? "
 name = gets.chomp
 
 puts "How many years old are you? "
-age = gets.chomp
+age = gets.to_i
+while age == 0		# check for invalid input
+	puts "Please type a whole number greater than 0. How many years old are you? "
+	age = gets.to_i
+end					# works
 
 puts "What year were you born? "
-year = gets.chomp
+year = gets.to_i
 
 puts "Our company cafeteria serves garlic bread. Should we order some for you? "
 garlic = gets.chomp
@@ -42,16 +46,18 @@ else "Results inconclusive"
 #################################################################################
 
 =begin	Check variables: 
-puts "\n"
+puts "\n\n"
 puts name
+puts name.class
 puts age
-puts year_born
-puts garlic_pref
-puts health_ins_pref
+puts age.class
+puts year
+puts year.class
+puts garlic
+puts garlic.class
+puts insurance
+puts insurance.class
 =end
 
 
-#until age.class == Fixnum		# check for invalid input??
-#	puts "Please type an integer. How many years old are you? "
-#	age = gets.chomp
-#end							#  not working yet
+
