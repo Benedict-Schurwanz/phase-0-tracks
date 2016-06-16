@@ -50,11 +50,11 @@ elsif ((insurance_input == "No") || (insurance_input == "no") || (insurance_inpu
 end
 
 # run vampire test
-if age == (2016 - year) && (garlic || insurance)
+if (age == (2016 - year) || age == (2015 - year)) && (garlic || insurance)
 	vampire = 1
-elsif age != (2016 - year) && (!garlic || !insurance)
+elsif !(age == (2016 - year) || age == (2015 - year)) && (!garlic || !insurance)
 	vampire = 2
-elsif age != (2016 - year) && !garlic && !insurance
+elsif !(age == (2016 - year) || age == (2015 - year)) && !garlic && !insurance
 	vampire = 3
 elsif name == "Drake Cula" || name == "Tu Fang"
 	vampire = 4
@@ -65,21 +65,26 @@ end
 # print vampire test results
 if vampire == 1
 	puts "Probably not a vampire."
+	puts vampire
 elsif vampire == 2
 	puts "Probably a vampire."
+	puts vampire
 elsif vampire == 3
 	puts "Almost certainly a vampire."
+	puts vampire
 elsif vampire == 4
 	puts "Definitely a vampire."
+	puts vampire
 else
 	puts "Results inconclusive."
+	puts vampire
 end
 
 
+=begin		# test all inputs and outputs
 
 
-
-
+=end
 
 
 #################################################################################
