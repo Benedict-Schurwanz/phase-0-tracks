@@ -56,20 +56,20 @@ elsif age != (2016 - year) && (!garlic || !insurance)
 	vampire = 2
 elsif age != (2016 - year) && !garlic && !insurance
 	vampire = 3
-elsif name = "Drake Cula" || name = "Tu Fang"
+elsif name == "Drake Cula" || name == "Tu Fang"
 	vampire = 4
 else
 	vampire = 0
 end
 
 # print vampire test results
-if vampire = 1
+if vampire == 1
 	puts "Probably not a vampire."
-elsif vampire = 2
+elsif vampire == 2
 	puts "Probably a vampire."
-elsif vampire = 3
+elsif vampire == 3
 	puts "Almost certainly a vampire."
-elsif vampire = 4
+elsif vampire == 4
 	puts "Definitely a vampire."
 else
 	puts "Results inconclusive."
