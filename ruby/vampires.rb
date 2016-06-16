@@ -49,7 +49,7 @@ elsif ((insurance_input == "No") || (insurance_input == "no") || (insurance_inpu
 		insurance = false;
 end
 
-
+# run vampire test
 if age == (2016 - year) && (garlic || insurance)
 	vampire = 1
 elsif age != (2016 - year) && (!garlic || !insurance)
@@ -62,6 +62,29 @@ else
 	vampire = 0
 end
 
+# print vampire test results
+if vampire = 1
+	puts "Probably not a vampire."
+elsif vampire = 2
+	puts "Probably a vampire."
+elsif vampire = 3
+	puts "Almost certainly a vampire."
+elsif vampire = 4
+	puts "Definitely a vampire."
+else
+	puts "Results inconclusive."
+end
+
+
+
+
+
+
+
+
+#################################################################################
+# notes
+#################################################################################
 
 =begin	Pseudocode
 
@@ -78,9 +101,6 @@ else "Results inconclusive"
 
 
 
-#################################################################################
-# notes
-#################################################################################
 
 =begin	Check variables: 
 puts "\n\n"
