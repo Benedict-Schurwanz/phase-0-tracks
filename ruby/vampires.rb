@@ -10,13 +10,15 @@ name = gets.chomp
 puts "How many years old are you? "
 age = gets.to_i
 while age == 0		# check for invalid input
+	# if user types letters instead of numbers, age will equal 0
+	# if user types a number with decimals - 2.3 - age will get rounded down to an integer
 	puts "Please type a whole number greater than 0. How many years old are you? "
 	age = gets.to_i
 end					# works
 
 puts "What year were you born? "
-year_input = gets.to_i
-year = 2016 - year_input
+year = gets.to_i
+#year = 2016 - year_input
 
 puts "Our company cafeteria serves garlic bread. Should we order some for you? "
 garlic_input = gets.chomp
@@ -48,7 +50,17 @@ elsif ((insurance_input == "No") || (insurance_input == "no") || (insurance_inpu
 end
 
 
-#if age == year && (garlic )
+if age == (2016 - year) && (garlic || insurance)
+	vampire = 1
+elsif age != (2016 - year) && (!garlic || !insurance)
+	vampire = 2
+elsif age != (2016 - year) && !garlic && !insurance
+	vampire = 3
+elsif name = "Drake Cula" || name = "Tu Fang"
+	vampire = 4
+else
+	vampire = 0
+end
 
 
 =begin	Pseudocode
