@@ -11,19 +11,15 @@ hamster_color = gets.chomp
 color = hamster_color.to_s
 i=0
 until i>100
-			
-			puts "Is this hamster a good candidate for adoption? Type \"yes\" or \"no\"."
-		hamster_candidate = gets.chomp
-		if 
-				hamster_candidate=="yes"
-				candidate=true
-				break
-			elsif 
-				hamster_candidate=="no"
-				candidate=false
-			break
-		
-		end
+	puts "Is this hamster a good candidate for adoption? Type \"yes\" or \"no\"."
+	hamster_candidate = gets.chomp
+	if hamster_candidate=="yes"
+		candidate=true
+		break
+	elsif hamster_candidate=="no"
+		candidate=false
+		break
+	end
 	i+=1
 end		
 puts "How old is your hamster?"
@@ -32,4 +28,4 @@ if hamster_age == ""
 	hamster_age = nil
 end
 
-puts" you hamster name: #{hamster_name}, Volume: #{volume}, color:#{color}, Good candidate: #{hamster_candidate}, Age:#{hamster_age}"
+puts "your hamster name: #{hamster_name}, \nVolume: #{volume}, \ncolor: #{color}, \nGood candidate: #{hamster_candidate}, \nAge: #{hamster_age}"
