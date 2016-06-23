@@ -25,20 +25,27 @@ done
 
 =end
 
-=begin 		# logic details
 
-What tasks do we need to do: 
+
+=begin 		# more specific logic details
+
+What tasks do we need to do: (* indicates methods to make)
 	make a hash
 	get user info
- 	convert user info into proper format
 	put user info into hash
+* 	convert user info into proper format
 *	print hash
 
 *	ask about updates
+	*	then convert those new values if necessary
 
 *	print hash again
 
 =end
+
+
+
+
 
 ## 		Logic
 
@@ -53,6 +60,7 @@ def convert_input(h)	# takes a hash as argument,
 	elsif h[:luxury] == "no"
 		h[:luxury] = false
 	end
+	
 	h # return hash
 end
 
@@ -76,11 +84,14 @@ def update_data(h)
 	puts "Would you like to change anything? Type which field do you want to change, (enter \"none\" if you are satisfied with your entries) "
 # 	need to get the field that they want to change, then print the key for that field, then get the value and assign it to the value corresponding to that key
 	which_field = gets.chomp	# get which field
+	if which_field == "none"	# exit if user enters "none"
+		return h
+	end
 	field_key = which_field.to_sym
 	puts "What would you like to change #{which_field} to? " 
 	new_value = gets.chomp # get new value for that key
 	h[field_key] = new_value
-	convert_input(h)
+	convert_input(h)	# convert new values where appropriate
 	h 	# return the updated hash
 end
 
@@ -123,9 +134,7 @@ convert_input(interior)
 print_hash(interior)
 
 #offer edit
-update_data(interior)
-#convert new values where appropriate
-convert_input(interior)
+update_data(interior) 	# calls convert_input within update_data method
 
 #print edited data
 print_hash(interior)
