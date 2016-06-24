@@ -2,11 +2,13 @@
 # Benedict Schurwanz
 
 coffee_shop = {
-	table1: {
+	table_1: {
 		num_people: 1, 
 		drinks: [ "iced coffee" ], 
 		computers: [ "macbook pro" ]
-	}
-	table2: {}
+	}, 
+	table_2: {}
 }
 
+puts "at the coffee shop, at Table 1 there are #{coffee_shop[:table_1][:num_people]} people,"
+#puts " drinking #{coffee_shop[:table_1][:drinks].each {}}"
