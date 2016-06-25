@@ -30,17 +30,91 @@ Methods to write - one for each small job
 
 Helpful things:
 # where in the array is it: array.index(character_in_question)
+vowels = "aeiou"
+vowels_array = vowels.chars
+consonants = "bcdfghjklmnpqrstvwxyz"
+consonants_array = consonants.chars
 
 =end
 
-$vowels = "aeiou"
-$vowels_array = $vowels.chars
-$consonants = "bcdfghjklmnpqrstvwxyz"
-$consonants_array = $consonants.chars
 
 
 
-def next_vowel(character)	
 
+def next_vowel(character)	# assumes character is a vowel
+	vowels = "aeiou"
+	vowels_array = vowels.chars
+	new_character = ""		# where our answer will go
+	new_index = nil
 
+	our_index = vowels_array.index(character)
+	
+	if character != "u"
+		new_index = our_index + 1
+	elsif character == "u"
+		new_index = 0
+	end
+
+	new_character = vowels_array[new_index]
+
+	new_character	# returns the new character
 end
+
+
+puts next_vowel("a")
+puts next_vowel("e")
+puts next_vowel("i")
+puts next_vowel("o")
+puts next_vowel("u")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
