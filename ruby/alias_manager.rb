@@ -27,6 +27,17 @@ Methods to write - one for each small job
 	- if character is not 'z'
 		- return the character from consonants array with index_of_character_in_question + 1
 
+# surname_swap - swap the first and last name
+	- change string to array of words, 
+		- array.split(' ')
+	- reverse it, 
+	- change it back to a string
+
+# name changer - do the things
+	- loop through the string, 
+	- check if it's a vowel or consonant, 
+	- call appropriate next_ method
+
 
 Helpful things:
 # where in the array is it: array.index(character_in_question)
@@ -78,30 +89,10 @@ def next_consonant(character)	# assumes character is a consonant
 	new_character = consonants_array[new_index]
 
 	new_character	# returns the new character
-end
+end		# tested, working
 
 
-puts next_consonant("b")
-puts next_consonant("c")
-puts next_consonant("d")
-puts next_consonant("f")
-puts next_consonant("g")
-puts next_consonant("h")
-puts next_consonant("j")
-puts next_consonant("k")
-puts next_consonant("l")
-puts next_consonant("m")
-puts next_consonant("n")
-puts next_consonant("p")
-puts next_consonant("q")
-puts next_consonant("r")
-puts next_consonant("s")
-puts next_consonant("t")
-puts next_consonant("v")
-puts next_consonant("w")
-puts next_consonant("x")
-puts next_consonant("y")
-puts next_consonant("z")
+
 
 
 
