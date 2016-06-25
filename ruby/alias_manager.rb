@@ -58,19 +58,50 @@ def next_vowel(character)	# assumes character is a vowel
 	new_character = vowels_array[new_index]
 
 	new_character	# returns the new character
+end		# tested, working
+
+# same thing but for consonants
+def next_consonant(character)	# assumes character is a consonant
+	consonants = "bcdfghjklmnpqrstvwxyz"
+	consonants_array = consonants.chars
+	new_character = ""		# where our answer will go
+	new_index = nil
+
+	our_index = consonants_array.index(character)
+	
+	if character != "z"
+		new_index = our_index + 1
+	elsif character == "z"
+		new_index = 0
+	end
+
+	new_character = consonants_array[new_index]
+
+	new_character	# returns the new character
 end
 
 
-puts next_vowel("a")
-puts next_vowel("e")
-puts next_vowel("i")
-puts next_vowel("o")
-puts next_vowel("u")
-
-
-
-
-
+puts next_consonant("b")
+puts next_consonant("c")
+puts next_consonant("d")
+puts next_consonant("f")
+puts next_consonant("g")
+puts next_consonant("h")
+puts next_consonant("j")
+puts next_consonant("k")
+puts next_consonant("l")
+puts next_consonant("m")
+puts next_consonant("n")
+puts next_consonant("p")
+puts next_consonant("q")
+puts next_consonant("r")
+puts next_consonant("s")
+puts next_consonant("t")
+puts next_consonant("v")
+puts next_consonant("w")
+puts next_consonant("x")
+puts next_consonant("y")
+puts next_consonant("z")
 
 
 
