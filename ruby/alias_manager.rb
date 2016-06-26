@@ -153,14 +153,16 @@ noc_list = {}
 
 while name != "quit"
 	spy_name = name_changer(name)
-	puts "Your new spy name is #{spy_name}"
+	puts "Your new spy name is \"#{spy_name}\""
 	noc_list[name] = spy_name
 
 	puts 'Enter another name, or "quit" to quit'
 	name = gets.chomp
 end
 
-p noc_list
+noc_list.each do |original, spy|
+	puts "#{original}'s spy name is \"#{spy}\""
+end
 
 
 
