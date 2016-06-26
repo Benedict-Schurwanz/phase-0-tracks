@@ -39,7 +39,7 @@ Methods to write - one for each small job
 	- loop through the string, 
 	- check if it's a vowel, consonant, or space
 	- if vowel/consonant, call appropriate next_ method
-	- if space, go to next iteration in loop
+	- if space, go to next iteration in loop (or just put a space there)
 	- if letter is uppercase, make that letter uppercase in new string
 
 Helpful things:
@@ -53,6 +53,7 @@ consonants_array = consonants.chars
 
 
 
+## 				LOGIC
 
 
 def next_vowel(character)	# assumes character is a vowel
@@ -134,33 +135,27 @@ def name_changer(name)
 	changed_name
 end
 
-
-test_name = "Jarbo McCamps"
-
-
-
-puts name_changer(test_name)
+#test_name = "Jarbo McCamps"
+#puts name_changer(test_name)
 
 
-=begin 
-# name changer - do the things
-#	- loop through the string, index = 0					^
-#while index < name.length do
-#	puts "#{index} #{name[index]}"
-#	index += 1
-#end
-#	- check if it's a vowel, consonant, or space			^
-#	- if vowel/consonant, call appropriate next_ method 	
-#	- if space, go to next iteration in loop 				
-		- or set that spot to space	
+
+## 			USER INTERFACE
+
+=begin  
+- user enters a name, gets fake name back
+- loops until entered name = "quit"
 =end
 
+puts 'Please enter your name (press enter after each name, or type "quit" to quit)'
+name = gets.chomp
 
-
-
-
-
-
+while name != "quit"
+	spy_name = name_changer(name)
+	puts "Your new spy name is #{spy_name}"
+	puts 'Enter another name, or "quit" to quit'
+	name = gets.chomp
+end
 
 
 
