@@ -21,3 +21,14 @@ p array
 array.insert(2, 'c')
 
 p array
+
+array = array.drop(1)
+
+p array
+
+includes_a = array.include?("a")
+includes_c = array.include?("c")
+
+puts "The array now includes 'a': #{includes_a}"
+puts "The array now includes 'c': #{includes_c}"
+
