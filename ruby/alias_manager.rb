@@ -37,7 +37,6 @@ Methods to write - one for each small job
 
 # name changer - do the things
 	- loop through the string, 
-		[0...string.length].each do |character|
 	- check if it's a vowel, consonant, or space
 	- if vowel/consonant, call appropriate next_ method
 	- if space, go to next iteration in loop
@@ -107,25 +106,40 @@ end 	# works
 
 def name_changer(name)
 	changed_name = ""
-	[0...name.length].each do |index_of_character|
-		character = name[index_of_character]
-		puts character
+	index = 0
+	while index < name.length do
+		puts "#{index} #{name[index]}"
+		index += 1
 	end
 
 	changed_name
 end
 
-name_changer("Bill")
+
+name = "Jarbo camps"
+#puts name[0]
+#character = name[0]
+#puts character
 
 
 
+
+
+
+#name_changer("Joe")
+
+
+=begin 
 # name changer - do the things
-#	- loop through the string, 
-#		[0...string.length].each do |character|
+#	- loop through the string, index = 0
+#while index < name.length do
+#	puts "#{index} #{name[index]}"
+#	index += 1
+#end
 #	- check if it's a vowel, consonant, or space
 #	- if vowel/consonant, call appropriate next_ method
 #	- if space, go to next iteration in loop
-
+=end
 
 
 
