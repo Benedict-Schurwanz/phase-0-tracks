@@ -32,3 +32,8 @@ includes_c = array.include?("c")
 puts "The array now includes 'a': #{includes_a}"
 puts "The array now includes 'c': #{includes_c}"
 
+array2 = ["a", "b", "c"]
+
+total = array + array2
+
+p total
