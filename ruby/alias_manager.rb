@@ -115,12 +115,12 @@ def name_changer(name)
 	while index < name.length do
 		if (vowels.include? name[index]) || (vowels.include? name[index].downcase)
 			# if vowels contains current character (or its uppercase version)
-			changed_name << next_vowel(name[index].downcase)
+			changed_name << next_vowel(name[index].downcase) #need to pass downcase version into method
 		elsif (consonants.include? name[index]) || (consonants.include? name[index].downcase) 
 			# if consonants contains current character (or uppercase)
-			changed_name << next_consonant(name[index].downcase)
+			changed_name << next_consonant(name[index].downcase) #need to pass downcase version into method
 		else #if current character is a space
-			changed_name << " "
+			changed_name << " " # don't change it
 		end
 
 		# if the letter in the original string was uppercase, upcase the same letter in the changed_name
@@ -135,11 +135,11 @@ def name_changer(name)
 end
 
 
-name = "Jarbo McCamps"
+test_name = "Jarbo McCamps"
 
 
 
-puts name_changer("Abcd Xyz")
+puts name_changer(test_name)
 
 
 =begin 
