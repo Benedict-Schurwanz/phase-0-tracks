@@ -13,3 +13,11 @@ array << 4
 array << 5
 
 p array
+
+array.delete_at(2)
+
+p array
+
+array.insert(2, 'c')
+
+p array
