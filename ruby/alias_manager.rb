@@ -40,7 +40,7 @@ Methods to write - one for each small job
 	- check if it's a vowel, consonant, or space
 	- if vowel/consonant, call appropriate next_ method
 	- if space, go to next iteration in loop
-
+	- if letter is uppercase, make that letter uppercase in new string
 
 Helpful things:
 # where in the array is it: array.index(character_in_question)
@@ -107,20 +107,26 @@ end 	# works
 def name_changer(name)
 	vowels = "aeiou"
 	consonants = "bcdfghjklmnpqrstvwxyz"
+	name = surname_swap(name)
+
 	changed_name = ""
+	
 	index = 0
 	while index < name.length do
 		if (vowels.include? name[index]) || (vowels.include? name[index].downcase)
-			# if vowels contains our character (or it's uppercase version)
-			puts "vowel"
-		elsif (consonants.include? name[index]) || (consonants.include? name[index].downcase)
-			puts "consonant"
-		else
-			puts "space"
+			# if vowels contains current character (or its uppercase version)
+			changed_name << next_vowel(name[index].downcase)
+		elsif (consonants.include? name[index]) || (consonants.include? name[index].downcase) 
+			# if consonants contains current character (or uppercase)
+			changed_name << next_consonant(name[index].downcase)
+		else #if current character is a space
+			changed_name << " "
 		end
 
-
-
+		# if the letter in the original string was uppercase, upcase the same letter in the changed_name
+		if name[index] == name[index].upcase
+			changed_name[index] = changed_name[index].upcase
+		end
 
 		index += 1
 	end
@@ -130,24 +136,23 @@ end
 
 
 name = "Jarbo McCamps"
-#puts name[0]
-#character = name[0]
-#puts character
 
 
-name_changer(name)
+
+puts name_changer("Abcd Xyz")
 
 
 =begin 
 # name changer - do the things
-#	- loop through the string, index = 0		^
+#	- loop through the string, index = 0					^
 #while index < name.length do
 #	puts "#{index} #{name[index]}"
 #	index += 1
 #end
-#	- check if it's a vowel, consonant, or space	
-#	- if vowel/consonant, call appropriate next_ method
-#	- if space, go to next iteration in loop
+#	- check if it's a vowel, consonant, or space			^
+#	- if vowel/consonant, call appropriate next_ method 	
+#	- if space, go to next iteration in loop 				
+		- or set that spot to space	
 =end
 
 
