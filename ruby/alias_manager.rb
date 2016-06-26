@@ -149,15 +149,18 @@ end
 
 puts 'Please enter your name (press enter after each name, or type "quit" to quit)'
 name = gets.chomp
+noc_list = {}
 
 while name != "quit"
 	spy_name = name_changer(name)
 	puts "Your new spy name is #{spy_name}"
+	noc_list[name] = spy_name
+
 	puts 'Enter another name, or "quit" to quit'
 	name = gets.chomp
 end
 
-
+p noc_list
 
 
 
