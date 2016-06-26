@@ -105,10 +105,21 @@ end 	# works
 
 
 def name_changer(name)
+	vowels = "aeiou"
+	consonants = "bcdfghjklmnpqrstvwxyz"
 	changed_name = ""
 	index = 0
 	while index < name.length do
-		puts "#{index} #{name[index]}"
+		if (vowels.include? name[index]) || (vowels.include? name[index].downcase)
+			# if vowels contains our character (or it's uppercase version)
+			puts "vowel"
+		elsif (consonants.include? name[index]) || (consonants.include? name[index].downcase)
+			puts "consonant"
+		end
+
+
+
+
 		index += 1
 	end
 
@@ -116,27 +127,23 @@ def name_changer(name)
 end
 
 
-name = "Jarbo camps"
+name = "Jarbo McCamps"
 #puts name[0]
 #character = name[0]
 #puts character
 
 
-
-
-
-
-#name_changer("Joe")
+name_changer("Joe")
 
 
 =begin 
 # name changer - do the things
-#	- loop through the string, index = 0
+#	- loop through the string, index = 0		^
 #while index < name.length do
 #	puts "#{index} #{name[index]}"
 #	index += 1
 #end
-#	- check if it's a vowel, consonant, or space
+#	- check if it's a vowel, consonant, or space	
 #	- if vowel/consonant, call appropriate next_ method
 #	- if space, go to next iteration in loop
 =end
