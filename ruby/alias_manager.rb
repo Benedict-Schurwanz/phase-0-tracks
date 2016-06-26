@@ -115,6 +115,8 @@ def name_changer(name)
 			puts "vowel"
 		elsif (consonants.include? name[index]) || (consonants.include? name[index].downcase)
 			puts "consonant"
+		else
+			puts "space"
 		end
 
 
@@ -133,7 +135,7 @@ name = "Jarbo McCamps"
 #puts character
 
 
-name_changer("Joe")
+name_changer(name)
 
 
 =begin 
