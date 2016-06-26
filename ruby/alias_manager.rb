@@ -29,14 +29,18 @@ Methods to write - one for each small job
 
 # surname_swap - swap the first and last name
 	- change string to array of words, 
-		- array.split(' ')
+		- string.split(' ')
 	- reverse it, 
+		- array.reverse
 	- change it back to a string
+		- array.join(' ')
 
 # name changer - do the things
 	- loop through the string, 
-	- check if it's a vowel or consonant, 
-	- call appropriate next_ method
+		[0...string.length].each do |character|
+	- check if it's a vowel, consonant, or space
+	- if vowel/consonant, call appropriate next_ method
+	- if space, go to next iteration in loop
 
 
 Helpful things:
@@ -91,21 +95,36 @@ def next_consonant(character)	# assumes character is a consonant
 	new_character	# returns the new character
 end		# tested, working
 
+# takes a string, swap first and last name
+def surname_swap(name)
+	name_array = name.split(' ')
+	reversed_name_array = name_array.reverse
+	reversed_name = reversed_name_array.join(' ')
+
+	reversed_name 	# returns reversed name
+end 	# works
+
+
+def name_changer(name)
+	changed_name = ""
+	[0...name.length].each do |index_of_character|
+		character = name[index_of_character]
+		puts character
+	end
+
+	changed_name
+end
+
+name_changer("Bill")
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+# name changer - do the things
+#	- loop through the string, 
+#		[0...string.length].each do |character|
+#	- check if it's a vowel, consonant, or space
+#	- if vowel/consonant, call appropriate next_ method
+#	- if space, go to next iteration in loop
 
 
 
