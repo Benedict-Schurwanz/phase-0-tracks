@@ -18,7 +18,7 @@ class Santa
 		puts "That was a good #{cookie_type}!"
 	end
 
-	#check attributes / driver code
+	# check attributes / driver code
 	def about
 		p @gender
 		p @ethnicity
@@ -26,7 +26,7 @@ class Santa
 		p @age
 	end
 
-	# 		attribute-changing methods
+			# attribute-changing methods
 
 	def celebrate_birthday
 		@age += 1
@@ -37,21 +37,21 @@ class Santa
 		@reindeer_ranking << reindeer
 	end
 
-	# getter methods
+			# getter methods
+	attr_reader :age, :ethnicity
+#	def age
+#		@age
+#	end
 
-	def age
-		@age
-	end
+#	def ethnicity
+#		@ethnicity
+#	end
 
-	def ethnicity
-		@ethnicity
-	end
-
-	# setter methods
-
-	def gender=(new_gender)
-		@gender = new_gender
-	end
+			# setter methods
+	attr_accessor :gender
+#	def gender=(new_gender)
+#		@gender = new_gender
+#	end
 
 end
 
