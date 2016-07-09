@@ -9,18 +9,18 @@ Attributes:
 - breath type: fire, ice, lightning, acid
 - color: colors for evil, metals for good
 "Black", "Blue", "Green", "Red", "White", "Brass", "Bronze", "Copper", "Gold", "Silver"
-- alignment: lawful good, neutral good, chaotic good, lawful neutral, true neutral, chaotic neutral, lawful evil, neutral evil, chaotic evil
+- alignment: lawful good, neutral good, chaotic good, lawful evil, neutral evil, chaotic evil
 
 Black		acid		CE
 Blue		lightning	LE
--Green		acid		LE
--Red 		fire 		CE
--White 		frost 		CE
--Brass 		fire 		CG
--Bronze 	lightning 	LG
--Copper 	acid 		CG
--Gold 		fire 		LG
--Silver 	frost 		LG
+Green		acid		LE
+Red 		fire 		CE
+White 		ice 		CE
+Brass 		fire 		CG
+Bronze 		lightning 	LG
+Copper 		acid 		CG
+Gold 		fire 		LG
+Silver 		ice 		LG
 
 Methods (arguments)
 - breath weapon
@@ -37,8 +37,40 @@ class Dragon
 	attr_accessor :alignment 
 
 	def initialize(color) 
-		@color = color
-		# set alignment and breath depending on color, see table
+		@color = color.downcase
+		# set alignment and breath depending on color, according to table
+		case color.downcase
+		when "black"
+			@breath = 		"acid"
+			@alignment = 	"chaotic evil"
+		when "blue"
+			@breath = 		"lightning"
+			@alignment = 	"lawful evil"
+		when "green"
+			@breath = 		"acid"
+			@alignment = 	"lawful evil"
+		when "red"
+			@breath = 		"fire"
+			@alignment = 	"chaotic evil"
+		when "white"
+			@breath = 		"ice"
+			@alignment = 	"chaotic evil"
+		when "brass"
+			@breath = 		"fire"
+			@alignment = 	"chaotic good"
+		when "bronze"
+			@breath = 		"lightning"
+			@alignment = 	"lawful good"
+		when "copper"
+			@breath = 		"acid"
+			@alignment = 	"chaotic good"
+		when "gold"
+			@breath = 		"fire"
+			@alignment = 	"lawful good"
+		when "silver"
+			@breath = 		"ice"
+			@alignment = 	"lawful good"
+		end
 	end
 
 #	def change_of_heart(new_align) 
@@ -46,7 +78,7 @@ class Dragon
 #	end
 
 	def breathe
-		puts "Roar! Whoosh of #{breath}!" 
+		puts "Roar! *Whoosh of #{breath}*!" 
 	end
 
 	def cast_spell
@@ -54,18 +86,26 @@ class Dragon
 	end
 
 	def talk(who_talking_to) 
-		case who_talking_to
+		case who_talking_to.downcase
 		when "friend" 
 			puts "Hello, my friend. Who's hungry?" 
 		when "foe" 
-			puts "I'm feeling hungry. Chomp!" 
+			puts "I'm feeling hungry. *Chomp*!" 
 		end
 	end
 end
 
 
 
+draco = Dragon.new("red")
+p draco.color
+p draco.alignment
+p draco.breath
 
+draco.breathe
+draco.cast_spell
+draco.talk("friend")
+draco.talk("foe")
 
 
 
