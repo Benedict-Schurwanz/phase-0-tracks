@@ -30,12 +30,15 @@ Methods (arguments)
 
 =end
 
+## 					LOGIC
+
 class Dragon 
 # attributes: color, alignment, breath
 	attr_reader :color, :breath
-	attr_accessor :alignment 
+	attr_accessor :alignment, :name
 
-	def initialize(color) 
+	def initialize(color, name = nil) 
+		@name = name
 		@color = color.downcase
 		# set alignment and breath depending on color, according to table
 		case color.downcase
@@ -72,10 +75,6 @@ class Dragon
 		end
 	end
 
-#	def change_of_heart(new_align) 
-#		puts "You've had a change of heart!" 
-#	end
-
 	def breathe
 		puts "Roar! *Whoosh of #{breath}*!" 
 	end
@@ -95,6 +94,16 @@ class Dragon
 end
 
 
+=begin 				# driver code
+p draco.color
+p draco.alignment
+p draco.breath
+
+draco.breathe
+draco.cast_spell
+draco.talk("friend")
+draco.talk("foe")
+
 dragon_array = ["black", "blue", "green", "red", "white", "brass", "bronze", "copper", "gold", "silver"]
 dracos = []
 
@@ -111,25 +120,32 @@ dracos.each do |dragon|
 	dragon.talk("friend")
 	dragon.talk("foe")
 end
-
-
-=begin 	# driver code
-p draco.color
-p draco.alignment
-p draco.breath
-
-draco.breathe
-draco.cast_spell
-draco.talk("friend")
-draco.talk("foe")
 =end
 
 
+##  		USER INTERFACE
+# user should be allowed to create as many instances of your class as they like
+# prompt user for each attribute, converting to appropriate data type
+# 	store instances in array
+# when user indicates they're finished, loop through & print out attributes of each instance as a confirmation of what was created
 
+#puts "How many dragons would you like to make? "
+#how_many_dragons = gets.chomp.to_i
 
+dragons = []
 
+loop do 
+	puts 'What would you like to name this dragon? (type "done" when you are finished)'
+	name = gets.chomp
+	break if name == "done"
+	puts "What color is this dragon? (choose from black, blue, green, red, white, brass, bronze, copper, gold, or silver) "
+	color = gets.chomp
+	dragons << Dragon.new(color, name)
+end
 
-
+dragons.each do |dragon|
+	puts "#{dragon.name} is a #{dragon.color} dragon, who breathes #{dragon.breath} and is #{dragon.alignment}."
+end
 
 
 
