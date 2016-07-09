@@ -11,7 +11,6 @@ Attributes:
 "Black", "Blue", "Green", "Red", "White", "Brass", "Bronze", "Copper", "Gold", "Silver"
 - alignment: lawful good, neutral good, chaotic good, lawful neutral, true neutral, chaotic neutral, lawful evil, neutral evil, chaotic evil
 
-<<<<<<< HEAD
 Black		acid		CE
 Blue		lightning	LE
 -Green		acid		LE
@@ -26,59 +25,12 @@ Blue		lightning	LE
 Methods (arguments)
 - breath weapon
 - cast spell
-=======
--Black	
-breath: acid
-align: CE
-
--Blue
-lightning
-LE
-
--Green
-acid
-LE
-
--Red
-fire
-CE
-
--White
-frost
-CE
-
--Brass
-fire
-CG
-
--Bronze
-lightning
-LG
-
--Copper
-acid
-CG
-
--Gold
-fire
-LG
-
--Silver
-frost
-LG
-
-
-
-Methods (arguments)
-- breath weapon
-- cast spell (what spell)
->>>>>>> 229511db8480e33292ead3294bf90611d0d618a9
 - talk to npc (friend or enemy?)
 - change shape / transmogrify - into what form? depends on who they're talking to
 
 =end
 
-<<<<<<< HEAD
+
 class Dragon 
 # attributes: color, alignment, breath
 	attr_reader :color, :breath
@@ -109,7 +61,6 @@ class Dragon
 			puts "I'm feeling hungry. Chomp!" 
 		end
 	end
->>>>>>> 229511db8480e33292ead3294bf90611d0d618a9
 end
 
 
@@ -134,9 +85,4 @@ end
 
 
 
-
-
-
-<<<<<<< HEAD
->>>>>>> 229511db8480e33292ead3294bf90611d0d618a9
 
