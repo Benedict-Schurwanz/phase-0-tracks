@@ -30,7 +30,6 @@ Methods (arguments)
 
 =end
 
-
 class Dragon 
 # attributes: color, alignment, breath
 	attr_reader :color, :breath
@@ -96,8 +95,25 @@ class Dragon
 end
 
 
+dragon_array = ["black", "blue", "green", "red", "white", "brass", "bronze", "copper", "gold", "silver"]
+dracos = []
 
-draco = Dragon.new("red")
+dragon_array.each do |color|
+	dracos << Dragon.new(color)
+end
+
+dracos.each do |dragon|
+	p dragon.color
+	p dragon.breath
+	p dragon.alignment
+	dragon.breathe
+	dragon.cast_spell
+	dragon.talk("friend")
+	dragon.talk("foe")
+end
+
+
+=begin 	# driver code
 p draco.color
 p draco.alignment
 p draco.breath
@@ -106,7 +122,7 @@ draco.breathe
 draco.cast_spell
 draco.talk("friend")
 draco.talk("foe")
-
+=end
 
 
 
