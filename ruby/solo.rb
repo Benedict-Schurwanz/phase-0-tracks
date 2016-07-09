@@ -24,7 +24,7 @@ Blue		lightning	LE
 
 Methods (arguments)
 - breath weapon
-- cast spell (what spell)
+- cast spell
 - talk to npc (friend or enemy?)
 - change shape / transmogrify - into what form? depends on who they're talking to
 
@@ -40,12 +40,16 @@ class Dragon
 		# set alignment and breath depending on color, see table
 	end
 
-	def change_of_heart(new_align) 
-		puts "You've had a change of heart!" 
-	end
+#	def change_of_heart(new_align) 
+#		puts "You've had a change of heart!" 
+#	end
 
 	def breathe
 		puts "Roar! Whoosh of #{breath}!" 
+	end
+
+	def cast_spell
+		puts "I cast Magic Missile at the darkness!"
 	end
 
 	def talk(who_talking_to) 
