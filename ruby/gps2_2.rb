@@ -52,11 +52,12 @@ def add_item(list, item, quantity = 1)
 	list
 end
 
-def remove_item(item)
-
+def remove_item(list, item)
+	list.delete(item)
+	list
 end
 
-def update_quantity(item, new_quantity)
+def update_quantity(list, item, new_quantity)
 
 end
 
@@ -73,7 +74,8 @@ p grocery_list
 add_item(grocery_list, "peaches", 2)
 p grocery_list
 
-
+remove_item(grocery_list, "pears")
+p grocery_list
 
 
 
