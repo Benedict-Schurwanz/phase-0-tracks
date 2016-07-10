@@ -58,7 +58,8 @@ def remove_item(list, item)
 end
 
 def update_quantity(list, item, new_quantity)
-
+	list[item] = new_quantity
+	list
 end
 
 def print_list
@@ -77,7 +78,8 @@ p grocery_list
 remove_item(grocery_list, "pears")
 p grocery_list
 
-
+update_quantity(grocery_list, "carrots", 3)
+p grocery_list
 
 
 
