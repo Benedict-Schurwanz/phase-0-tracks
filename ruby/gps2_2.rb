@@ -62,8 +62,11 @@ def update_quantity(list, item, new_quantity)
 	list
 end
 
-def print_list
-
+def print_list(list)
+	puts "Grocery List"
+	list.each do |item, quantity|
+		puts "#{quantity} #{item}"
+	end
 end
 
 
@@ -81,7 +84,7 @@ p grocery_list
 update_quantity(grocery_list, "carrots", 3)
 p grocery_list
 
-
+print_list(grocery_list)
 
 
 
