@@ -44,21 +44,25 @@ def create_list(initial_list)
 	list_array.length.times do |i|
 		groceries[list_array[i]] = 1
 	end
+	print_list(groceries)
 	groceries
 end
 
 def add_item(list, item, quantity = 1)
 	list[item] = quantity
+	print_list(list)
 	list
 end
 
 def remove_item(list, item)
 	list.delete(item)
+	print_list(list)
 	list
 end
 
 def update_quantity(list, item, new_quantity)
 	list[item] = new_quantity
+	print_list(list)
 	list
 end
 
@@ -67,22 +71,23 @@ def print_list(list)
 	list.each do |item, quantity|
 		puts "#{quantity} #{item}"
 	end
+	puts ""
 end
 
 
 grocery_list = create_list("carrots spaghetti bread")
-p grocery_list
+
 
 add_item(grocery_list, "pears")
-p grocery_list
+
 add_item(grocery_list, "peaches", 2)
-p grocery_list
+
 
 remove_item(grocery_list, "pears")
-p grocery_list
+
 
 update_quantity(grocery_list, "carrots", 3)
-p grocery_list
+
 
 print_list(grocery_list)
 
