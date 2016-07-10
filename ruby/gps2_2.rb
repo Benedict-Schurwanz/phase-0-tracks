@@ -1,5 +1,7 @@
 # GPS 2.2 
 # Benedict Schurwanz
+# pair: Denny Wu
+# guide: Clint Mullins
 
 =begin  			Pseudocode
 # Method to create a list - without using a class
@@ -92,20 +94,22 @@ remove_item(list, "lemonade")
 update_quantity(list, "ice cream", 1)
 
 
+=begin 		Release 5: Reflect
 
+* I learned that it's very helpful to finish all pseudocode before writing any actual code. That way you can iron out what you're doing before you bother implementing part of it; you might change your first ideas of what code you wanted to write during the course of writing the rest of the pseudocode algorithm
 
+* arrays allow one value - be it a string or a number - and hashes are useful for storing pairs of data. In this case each piece of data had a pair - each item had a quantity that needed to be attached to it
 
+* a method returns what the last line of the method evaluates to. "puts" statements are equal to nil
 
+* you can pass any object into a method as an argument - variables, data structures, other methods
 
+* you can pass information into a method as an argument, and you get information out of a method as the return value, or by using global variables - which are accessible everywhere in the program. parameters of methods have a scope such that they are only usable inside the method, so if you want the value usable outside the method you need to return it
 
+* I solidified my ideas of what can be passed into methods, and how to work with hashes -- how to add items to a hash and how to deal with them in a loop. 
+- I'm still a little confused on whether a hash or array needs to be passed into a method, or whether the same structure is accessible inside and outside of the method without explicitly passing it in and returning it out 
 
-
-
-
-
-
-
-
+=end
 
 
 
