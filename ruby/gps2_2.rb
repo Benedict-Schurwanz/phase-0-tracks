@@ -47,8 +47,9 @@ def create_list(initial_list)
 	groceries
 end
 
-def add_item(item, quantity = 1)
-
+def add_item(list, item, quantity = 1)
+	list[item] = quantity
+	list
 end
 
 def remove_item(item)
@@ -67,7 +68,10 @@ end
 grocery_list = create_list("carrots spaghetti bread")
 p grocery_list
 
-
+add_item(grocery_list, "pears")
+p grocery_list
+add_item(grocery_list, "peaches", 2)
+p grocery_list
 
 
 
