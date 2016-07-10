@@ -38,7 +38,7 @@
 
 
 
-def create_list(initial_list)
+def create_list(initial_list = "")
 	groceries = {}
 	list_array = initial_list.split(' ')
 	list_array.length.times do |i|
@@ -74,23 +74,22 @@ def print_list(list)
 	puts ""
 end
 
-
+=begin  driver code
 grocery_list = create_list("carrots spaghetti bread")
-
-
 add_item(grocery_list, "pears")
-
 add_item(grocery_list, "peaches", 2)
-
-
 remove_item(grocery_list, "pears")
-
-
 update_quantity(grocery_list, "carrots", 3)
-
-
 print_list(grocery_list)
+=end
 
+list = create_list()
+add_item(list, "lemonade", 2)
+add_item(list, "tomatoes", 3)
+add_item(list, "onions", 1)
+add_item(list, "ice cream", 4)
+remove_item(list, "lemonade")
+update_quantity(list, "ice cream", 1)
 
 
 
