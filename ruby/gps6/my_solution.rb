@@ -28,16 +28,12 @@ class VirusPredictor
   def predicted_deaths
     # predicted deaths is solely based on population density
     
-    multiplication_factor = 0.0
-    if @population_density >= 200
-      multiplication_factor = 0.4
-    elsif @population_density >= 150
-      multiplication_factor = 0.3
-    elsif @population_density >= 100
-      multiplication_factor = 0.2
-    elsif @population_density >= 50
-      multiplication_factor = 0.1
-    else
+    if @population_density >= 50
+      multiplication_factor = (@population_density.fdiv(50)).floor.fdiv(10)
+      # (density / 50), rounded down to int, then divided by 10
+      # ex: 200 / 50 = 4, 4/10 = 0.4
+      # ex: 185 / 50 = 3.7, rounded to 3, 3/10 = 0.3
+    else # if population density < 50
       multiplication_factor = 0.05
     end
     
@@ -52,18 +48,18 @@ class VirusPredictor
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
+    # speed = 0.0
 
     if @population_density >= 200
-      speed += 0.5
+      speed = 0.5
     elsif @population_density >= 150
-      speed += 1
+      speed = 1
     elsif @population_density >= 100
-      speed += 1.5
+      speed = 1.5
     elsif @population_density >= 50
-      speed += 2
+      speed = 2
     else
-      speed += 2.5
+      speed = 2.5
     end
 
     puts " and will spread across the state in #{speed} months.\n\n"
@@ -73,8 +69,7 @@ class VirusPredictor
 end
 
 STATE_DATA.each do |state, data|
-  current_state = VirusPredictor.new(state, data[:population_density], data[:population])
-  current_state.virus_effects
+  VirusPredictor.new(state, data[:population_density], data[:population]).virus_effects
 end
 
 
