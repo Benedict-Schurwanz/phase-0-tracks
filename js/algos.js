@@ -16,10 +16,27 @@
 // after the loop, the longest string index will be that of the longest string
 // print out that string with our final index
 
+function longestString(stringsArr){
+	longestStrIndex = 0; 
 
+	for (var i = 0; i < stringsArr.length; i++){
+		newLongest = (stringsArr[i].length > stringsArr[longestStrIndex].length);
+		// is current one longer? true or false 
 
+		if (newLongest){
+			longestStrIndex = i;
+		}
+		// update the index
+	}
 
+	return stringsArr[longestStrIndex]; 
+}
 
+var strings = ["long string", "longest string", "longer string"];
+console.log(longestString(strings));
+
+var words = ["longestest", "longest", "longish", "long", "short"];
+console.log(longestString(words));
 
 
 
