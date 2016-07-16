@@ -96,11 +96,11 @@ function keyValMatch(firstObj, secondObj){
 function randomWords(howManyWords){
 	var alphabet = "abcdefghijklmnopqrstuvwxyz"; 
 	var words = [];
-	for (i = 0; i < howManyWords; i++){
+	for (var i = 0; i < howManyWords; i++){
 		var wordLength = (Math.floor(Math.random() * 10)) + 1; // generate random number 1-10
 		var word = "";
 
-		for (j = 0; j < wordLength; j++){
+		for (var j = 0; j < wordLength; j++){
 			var index = Math.floor(Math.random() * alphabet.length); 
 			word = word.concat(alphabet.charAt(index));
 		}
@@ -110,27 +110,6 @@ function randomWords(howManyWords){
 
 	return words;
 }
-
-console.log(randomWords(5));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -160,9 +139,15 @@ var match = keyValMatch(obj1, obj2);
 console.log(match); // should be false
 
 
+// random word generator, fed into longestString
 
-
-
+for (var i = 0; i < 10; i++) {
+	var howMany = (Math.floor(Math.random() * 10)) + 1;
+	var words = randomWords(howMany);
+	console.log(i);
+	console.log(words);
+	console.log(longestString(words));
+}
 
 
 
