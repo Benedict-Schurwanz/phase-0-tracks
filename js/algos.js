@@ -30,7 +30,41 @@ function longestString(stringsArr){
 	}
 
 	return stringsArr[longestStrIndex]; 
+	// return longest string
 }
+
+
+// Release 1 - key-value match
+// algorithm
+
+// takes two objects
+// checks to see if they share at least one key-value pair
+
+// store a boolean value equal to whether there's a match, initialize to false -- probably don't need to do this, can use 'return'
+// use a nested loop, 
+// outer loop moves through first object,
+// inner loop moves through the second object,
+// checking the current key-value of the first object 
+// against each key-value in the second object
+// if there is a match, return true
+// if loop finishes, return false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Driver Code Tests
 
 var strings = ["long string", "longest string", "longer string"];
 console.log(longestString(strings));
