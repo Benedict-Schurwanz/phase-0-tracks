@@ -34,6 +34,7 @@ function longestString(stringsArr){
 }
 
 
+
 // Release 1 - key-value match
 // algorithm
 
@@ -70,6 +71,40 @@ function keyValMatch(firstObj, secondObj){
 
 	return false; // if no match is found
 }
+
+
+
+// Release 2 - generate random strings
+// algorithm
+
+// take integer for array length
+// loop through that many times,
+// determine a word length between 1 and 10,
+// generate a word of random letters with that length
+
+// how do I:
+// generate a random letter?
+//  - maybe use an alphabet array and use a random index
+//  - check for built-in sample function
+//  - check for different kinds of random functions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
