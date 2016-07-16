@@ -88,10 +88,24 @@ function keyValMatch(firstObj, secondObj){
 //  - check for built-in sample function
 //  - check for different kinds of random functions
 
+// notes:
+// random integer: Math.floor(Math.random() * wordLength)
+
+function randomWords(howManyWords){
+	//var alphabet = 
+	var words = [];
+	word = "";
+	for (i = 0; i < howManyWords; i++){
+		var wordLength = (Math.floor(Math.random() * 10)) + 1; // generate random number 1-10
+		console.log(wordLength);
+
+	}
 
 
+	return words;
+}
 
-
+randomWords(5);
 
 
 
