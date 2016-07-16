@@ -29,12 +29,8 @@ for (i = 0; i < colors.length; i++){
 	horseys[names[i]] = colors[i];
 }
 
-console.log(horseys);
+// console.log(horseys);
 
-//     attempting code to loop through object to print out 'keys' and 'values' in a user friendly output - not working out so good... commenting this out for now
-// for (i = 0; i < horseys.length; i++){
-// 	console.log(Object.keys(horseys)[i]);	
-// }
 
 
 //  Car constructor
@@ -46,11 +42,23 @@ function Car(color, mileage){
 	}
 }
 
+// driver code
 var modelT = new Car("black", 0);
 var modelQ = new Car("rainbow", 7000000);
 
 console.log("Our model T is a " + modelT.color + " car with " + modelT.mileage + " miles.");
 console.log("We also have a pretty " + modelQ.color + " car with " + modelQ.mileage + " miles. But the horn still works...");
 modelQ.horn();
+
+
+
+
+
+
+
+
+
+
+
 
 
