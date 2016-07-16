@@ -54,10 +54,16 @@ function longestString(stringsArr){
 // value: firstObj[Object.keys(firstObj)[i]]
 
 function keyValMatch(firstObj, secondObj){
-	for (var i = 0; i < Object.keys(firstObj).length; i++){
-		key1 = Object.keys(firstObj)[i];
-		value1 = firstObj[key1];
+	for (i = 0; i < Object.keys(firstObj).length; i++){
+		var key1 = Object.keys(firstObj)[i];
+		var value1 = firstObj[key1];
 		console.log(key1 + ": " + value1);
+
+		for (j = 0; j < Object.keys(secondObj).length; j++){
+			var key2 = Object.keys(secondObj)[j];
+			var value2 = secondObj[key2];
+			console.log(key2 + ": " + value2);
+		}
 	}
 
 
@@ -65,8 +71,8 @@ function keyValMatch(firstObj, secondObj){
 	return false; // if no match is found
 }
 
-var objOne = {name: "Spot", age: 2};
-var objTwo = {name: "Jim", age: 3};
+var objOne = {name: "Spot", age: 2, pet: true};
+var objTwo = {name: "Jim", age: 3, pet: true};
 
 keyValMatch(objOne, objTwo);
 
