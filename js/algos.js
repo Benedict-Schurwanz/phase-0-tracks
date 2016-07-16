@@ -49,11 +49,26 @@ function longestString(stringsArr){
 // if there is a match, return true
 // if loop finishes, return false
 
+// notes:
+// key: Object.keys(firstObj)[i]
+// value: firstObj[Object.keys(firstObj)[i]]
+
+function keyValMatch(firstObj, secondObj){
+	for (var i = 0; i < Object.keys(firstObj).length; i++){
+		key1 = Object.keys(firstObj)[i];
+		value1 = firstObj[key1];
+		console.log(key1 + ": " + value1);
+	}
 
 
 
+	return false; // if no match is found
+}
 
+var objOne = {name: "Spot", age: 2};
+var objTwo = {name: "Jim", age: 3};
 
+keyValMatch(objOne, objTwo);
 
 
 
