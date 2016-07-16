@@ -89,23 +89,29 @@ function keyValMatch(firstObj, secondObj){
 //  - check for different kinds of random functions
 
 // notes:
-// random integer: Math.floor(Math.random() * wordLength)
+// random integer between 1 and wordLength: Math.floor(Math.random() * wordLength) + 1
+// access characters in a string: 
+// 		string.charAt(index) 
 
 function randomWords(howManyWords){
-	//var alphabet = 
+	var alphabet = "abcdefghijklmnopqrstuvwxyz"; 
 	var words = [];
-	word = "";
 	for (i = 0; i < howManyWords; i++){
 		var wordLength = (Math.floor(Math.random() * 10)) + 1; // generate random number 1-10
-		console.log(wordLength);
+		var word = "";
 
+		for (j = 0; j < wordLength; j++){
+			var index = Math.floor(Math.random() * alphabet.length); 
+			word = word.concat(alphabet.charAt(index));
+		}
+		words.push(word);
 	}
 
 
 	return words;
 }
 
-randomWords(5);
+console.log(randomWords(5));
 
 
 
