@@ -7,3 +7,16 @@
 // - do this over and over until the first string is empty
 // - return the reversed string
 
+function reverse(string) {
+	reversedString = "";
+	for (i = string.length -1; i >= 0; i -= 1) {
+		reversedString = reversedString + string.charAt(i);
+	}
+	return reversedString;
+}
+
+var string = "Hello!";
+var newString = reverse(string);
+if (1 == 1) {
+	console.log(newString);
+}
