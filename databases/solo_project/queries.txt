@@ -2,7 +2,7 @@ sqlite> SELECT * FROM dragons;
 1|Ajax Firestorm|venerable|4|unknown
 2|Clytemorrenestrix|mature|2|true
 3|Eldenser|great wyrm|6|true
-4|Kryonar|wyrm|5|false
+4|Kryonar|wyrm|5|null
 5|Zarlandris|mature adult|1|false
 
 
@@ -11,7 +11,7 @@ sqlite> SELECT * FROM dragons;
 1|Ajax Firestorm|venerable|4|true
 2|Clytemorrenestrix|mature|2|true
 3|Eldenser|great wyrm|6|true
-4|Kryonar|wyrm|5|false
+4|Kryonar|wyrm|5|null
 5|Zarlandris|mature adult|1|false
 
 
@@ -19,7 +19,7 @@ sqlite> SELECT * FROM dragons, colors WHERE dragons.colors_id = colors.id;
 1|Ajax Firestorm|venerable|4|true|4|red|fire|chaotic|evil
 2|Clytemorrenestrix|mature|2|true|2|blue|lightning|lawful|evil
 3|Eldenser|great wyrm|6|true|6|brass|fire|chaotic|good
-4|Kryonar|wyrm|5|false|5|white|ice|chaotic|evil
+4|Kryonar|wyrm|5|null|5|white|ice|chaotic|evil
 5|Zarlandris|mature adult|1|false|1|black|acid|chaotic|evil
 
 
@@ -27,11 +27,11 @@ sqlite> SELECT dragons.name, dragons.age, dragons.alive, colors.color, colors.br
 Ajax Firestorm|venerable|true|red|fire
 Clytemorrenestrix|mature|true|blue|lightning
 Eldenser|great wyrm|true|brass|fire
-Kryonar|wyrm|false|white|ice
+Kryonar|wyrm|null|white|ice
 Zarlandris|mature adult|false|black|acid
 
 
-sqlite> DELETE FROM dragons WHERE alive="false";
+sqlite> DELETE FROM dragons WHERE alive="null";
 sqlite> SELECT dragons.name, dragons.age, dragons.alive, colors.color, colors.breath FROM dragons JOIN colors ON dragons.colors_id = colors.id;
 Ajax Firestorm|venerable|true|red|fire
 Clytemorrenestrix|mature|true|blue|lightning
