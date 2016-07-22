@@ -1,10 +1,10 @@
-(comment: in the Forgotten Realms campaign setting of Dungeons & Dragons, the dragon "Kryonar" is an undead "dracolich", so his boolean "alive" value is listed as "null" for the purposes of this database. Dragon names and information taken from forgottenrealms.wikia.com.)
+(comment: in the Forgotten Realms campaign setting of Dungeons & Dragons, the dragon "Kryonar" is an undead "dracolich", so his boolean "alive" value is listed as "NULL" for the purposes of this database. Dragon names and information taken from forgottenrealms.wikia.com.)
 
 sqlite> SELECT * FROM dragons;
 1|Ajax Firestorm|venerable|4|unknown
 2|Clytemorrenestrix|mature|2|true
 3|Eldenser|great wyrm|6|true
-4|Kryonar|wyrm|5|null
+4|Kryonar|wyrm|5|NULL
 5|Zarlandris|mature adult|1|false
 
 
@@ -13,7 +13,7 @@ sqlite> SELECT * FROM dragons;
 1|Ajax Firestorm|venerable|4|true
 2|Clytemorrenestrix|mature|2|true
 3|Eldenser|great wyrm|6|true
-4|Kryonar|wyrm|5|null
+4|Kryonar|wyrm|5|NULL
 5|Zarlandris|mature adult|1|false
 
 
@@ -21,7 +21,7 @@ sqlite> SELECT * FROM dragons, colors WHERE dragons.colors_id = colors.id;
 1|Ajax Firestorm|venerable|4|true|4|red|fire|chaotic|evil
 2|Clytemorrenestrix|mature|2|true|2|blue|lightning|lawful|evil
 3|Eldenser|great wyrm|6|true|6|brass|fire|chaotic|good
-4|Kryonar|wyrm|5|null|5|white|ice|chaotic|evil
+4|Kryonar|wyrm|5|NULL|5|white|ice|chaotic|evil
 5|Zarlandris|mature adult|1|false|1|black|acid|chaotic|evil
 
 
@@ -29,11 +29,11 @@ sqlite> SELECT dragons.name, dragons.age, dragons.alive, colors.color, colors.br
 Ajax Firestorm|venerable|true|red|fire
 Clytemorrenestrix|mature|true|blue|lightning
 Eldenser|great wyrm|true|brass|fire
-Kryonar|wyrm|null|white|ice
+Kryonar|wyrm|NULL|white|ice
 Zarlandris|mature adult|false|black|acid
 
 
-sqlite> DELETE FROM dragons WHERE alive="null";
+sqlite> DELETE FROM dragons WHERE alive IS NULL;
 sqlite> SELECT dragons.name, dragons.age, dragons.alive, colors.color, colors.breath FROM dragons JOIN colors ON dragons.colors_id = colors.id;
 Ajax Firestorm|venerable|true|red|fire
 Clytemorrenestrix|mature|true|blue|lightning
