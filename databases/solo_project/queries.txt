@@ -1,3 +1,5 @@
+(comment: in the Forgotten Realms campaign setting of Dungeons & Dragons, the dragon "Kryonar" is an undead "dracolich", so his boolean "alive" value is listed as "null" for the purposes of this database. Dragon names and information taken from forgottenrealms.wikia.com.)
+
 sqlite> SELECT * FROM dragons;
 1|Ajax Firestorm|venerable|4|unknown
 2|Clytemorrenestrix|mature|2|true
