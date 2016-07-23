@@ -1,4 +1,5 @@
-(comment: in the Forgotten Realms campaign setting of Dungeons & Dragons, the dragon "Kryonar" is an undead "dracolich", so his boolean "alive" value is listed as "NULL" for the purposes of this database. Dragon names and information taken from forgottenrealms.wikia.com.)
+(comment: in the Forgotten Realms campaign setting of Dungeons & Dragons, the dragon "Kryonar" is an undead "dracolich", so his boolean "alive" value is listed as "NULL" for the purposes of this database. Also, each dragon of a given always has a specific type of breath and specific good/evil morality and lawful or chaotic nature, which is why those values are all dependent on color in the database.
+Dragon names and information taken from forgottenrealms.wikia.com.)
 
 sqlite> SELECT * FROM dragons;
 1|Ajax Firestorm|venerable|4|unknown
@@ -39,3 +40,22 @@ Ajax Firestorm|venerable|true|red|fire
 Clytemorrenestrix|mature|true|blue|lightning
 Eldenser|great wyrm|true|brass|fire
 Zarlandris|mature adult|false|black|acid
+
+
+sqlite> SELECT dragons.name, colors.align_moral FROM dragons LEFT JOIN colors ON dragons.colors_id = colors.id;
+Ajax Firestorm|evil
+Clytemorrenestrix|evil
+Eldenser|good
+Zarlandris|evil
+
+
+** tried a FULL OUTER JOIN but it didn't work **
+sqlite> SELECT dragons.name, dragons.alive, colors.color, colors.breath, colors.align_moral FROM dragons FULL OUTER JOIN colors ON dragons.colors_id = colors.id ORDER BY dragons.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+
+sqlite> SELECT dragons.name, colors.align_moral, colors.breath, dragons.age FROM dragons INNER JOIN colors ON dragons.colors_id = colors.id;
+Ajax Firestorm|evil|fire|venerable
+Clytemorrenestrix|evil|lightning|mature
+Eldenser|good|fire|great wyrm
+Zarlandris|evil|acid|mature adult
