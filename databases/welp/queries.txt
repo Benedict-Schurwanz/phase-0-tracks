@@ -1,0 +1,11 @@
+** assignment 8.4 queries **
+
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews LEFT JOIN businesses ON reviews.business_id = businesses.id LEFT JOIN users ON reviews.user_id = users.id;
+Bradford|Pitt|Grundy Hollow Wedding Chapel|4|I thought it was great
+Angela|Jolie|Grundy Hollow Wedding Chapel|2|the chapel was tacky
+Mandy|Kaling|Lotus Yoga|3|the snacks weren't bad
+
+
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews LEFT JOIN businesses ON reviews.business_id = businesses.id LEFT JOIN users ON reviews.user_id = users.id WHERE reviews.business_id = 1;
+Bradford|Pitt|Grundy Hollow Wedding Chapel|4|I thought it was great
+Angela|Jolie|Grundy Hollow Wedding Chapel|2|the chapel was tacky
