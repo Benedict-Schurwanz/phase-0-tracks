@@ -58,13 +58,31 @@ end
 #   say "good job [name]"
 get '/great_job' do
   name = params[:name]
-  
+
   if name
     "Good job, #{name}!"
   else
     "Good job!"
   end
 end
+
+# route that adds 2 route params and respond with result
+get '/:num1/plus/:num2' do
+  int1 = params[:num1].to_i
+  int2 = params[:num2].to_i
+  result = int1 + int2
+
+  "#{int1} + #{int2} = #{result}"
+end
+
+# optional bonus:
+# route that allows user to search database in some way
+
+
+
+
+
+
 
 
 
