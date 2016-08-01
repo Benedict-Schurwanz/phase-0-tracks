@@ -13,9 +13,17 @@
 
 # Findings
 
-Sources: 
+## Sources: 
 * jquery.com - jQuery API documentation
 * jQuery tutorial at w3schools.com
+
+## Notes
+* can be downloaded as a .js file and included in projects, or linked to via a content delivery network (CDN) which would download it to the browser when the page is loaded 
+
+
+
+
+
 
 
 # Results
